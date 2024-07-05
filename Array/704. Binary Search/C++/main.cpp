@@ -16,9 +16,6 @@ public:
     }
 
     int search_OlogN_1(vector<int>& nums, int target) {
-
-        sort(nums.begin(), nums.end());
-
         auto it = lower_bound(nums.begin(), nums.end(), target);
         if (it != nums.end() && *it == target) {
             return distance(nums.begin(), it);
