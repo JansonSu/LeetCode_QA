@@ -15,18 +15,18 @@ public:
         return -1;
     }
 
-    int search_OlogN_1(std::vector<int>& nums, int target) {
-        
-        std::sort(nums.begin(), nums.end());
+    int search_OlogN_1(vector<int>& nums, int target) {
 
-        auto it = std::lower_bound(nums.begin(), nums.end(), target);
+        sort(nums.begin(), nums.end());
+
+        auto it = lower_bound(nums.begin(), nums.end(), target);
         if (it != nums.end() && *it == target) {
-            return std::distance(nums.begin(), it);
+            return distance(nums.begin(), it);
         }
         return -1;
     }
 
-    int search_OlogN_2(std::vector<int>& nums, int target) {
+    int search_OlogN_2(vector<int>& nums, int target) {
         int left = 0, right = nums.size() - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
@@ -50,7 +50,7 @@ int main() {
 
     Solution sol;
 
-    printf("answer: %d",sol.search(array,target));
+    printf("answer: %d",sol.search_ON(array,target));
 
 
     return 0;
