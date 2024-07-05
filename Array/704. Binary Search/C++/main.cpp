@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 public:
-    int search(vector<int>& nums, int target) {
+    int search_ON(vector<int>& nums, int target) {
         for(int i = 0; i< nums.size(); i++){
             if(nums[i] == target){
                 return i;
@@ -15,7 +15,7 @@ public:
         return -1;
     }
 
-    int search_logO_1(std::vector<int>& nums, int target) {
+    int search_OlogN_1(std::vector<int>& nums, int target) {
         
         std::sort(nums.begin(), nums.end());
 
@@ -26,7 +26,7 @@ public:
         return -1;
     }
 
-    int search_logO_2(std::vector<int>& nums, int target) {
+    int search_OlogN_2(std::vector<int>& nums, int target) {
         int left = 0, right = nums.size() - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
